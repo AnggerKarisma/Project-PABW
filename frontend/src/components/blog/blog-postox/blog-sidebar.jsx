@@ -18,7 +18,7 @@ const BlogSidebar = () => {
           <div className="tp-sidebar-search">
             <form action="#">
               <div className="tp-sidebar-search-input">
-                <input type="text" placeholder="Search..." />
+                <input type="text" placeholder="Cari..." />
                 <button type="submit">
                   <Search/>
                 </button>
@@ -29,7 +29,7 @@ const BlogSidebar = () => {
 
         {/* about  */}
         <div className="tp-sidebar-widget mb-35">
-          <h3 className="tp-sidebar-widget-title">About me</h3>
+          <h3 className="tp-sidebar-widget-title">Tentang Saya</h3>
           <div className="tp-sidebar-widget-content">
             <div className="tp-sidebar-about">
               <div className="tp-sidebar-about-thumb mb-25">
@@ -39,10 +39,10 @@ const BlogSidebar = () => {
               </div>
               <div className="tp-sidebar-about-content">
                 <h3 className="tp-sidebar-about-title">
-                  <a href="#">Ravi {"O'Leigh"}</a>
+                  <a href="#">Ardi Dwi Saputra</a>
                 </h3>
-                <span className="tp-sidebar-about-designation">Photographer & Blogger</span>
-                <p>Lorem ligula eget dolor. Aenean massa. Cum sociis que penatibus magnis dis parturient</p>
+                <span className="tp-sidebar-about-designation">Mahasiswa Biasa Saja</span>
+                <p>Ya gak tau kok tanya saya</p>
                 <div className="tp-sidebar-about-signature">
                   <Image src={signature} alt="signature" />
                 </div>

@@ -39,7 +39,7 @@ const menu_data = [
     link: '/shop',
     product_pages: [
       {
-        title: 'Shop Page',
+        title: 'Halaman Toko',
         link: '/shop',
         mega_menus: [
           { title: 'Only Categories', link: '/shop-category' },
@@ -94,7 +94,7 @@ const menu_data = [
   {
     id: 4,
     single_link: true,
-    title: 'Coupons',
+    title: 'Kupon',
     link: '/coupon',
   },
   {
@@ -182,7 +182,7 @@ export const mobile_menu = [
   {
     id: 4,
     sub_menu: true,
-    title: 'More Pages',
+    title: 'Lebih Banyak Halaman',
     link: '/login',
     sub_menus: [
       { title: 'Login', link: '/login' },
@@ -194,13 +194,13 @@ export const mobile_menu = [
   {
     id: 4,
     single_link: true,
-    title: 'Coupons (apa ini?)',
+    title: 'Kupon',
     link: '/coupon',
   },
   {
     id: 5,
     sub_menu: true,
-    title: 'Blog (ga pake Go)',
+    title: 'Blog',
     link: '/blog',
     sub_menus: [
       { title: 'Blog Standard', link: '/blog' },

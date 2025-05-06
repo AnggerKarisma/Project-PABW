@@ -80,7 +80,7 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                           </span>
                         </div>
                         <div className="tp-footer-contact-content">
-                          <p><a href="mailto:shofy@support.com">kelompoklimapabw@gmail.com</a></p>
+                          <p><a href="mailto:shofy@support.com">mahakamstore@gmail.com</a></p>
                         </div>
                       </div>
                       <div className="tp-footer-contact-item d-flex align-items-start">
@@ -110,14 +110,7 @@ const Footer = ({ style_2 = false, style_3 = false,primary_style=false }) => {
                     </p>
                   </div>
                 </div>
-                <div className="col-md-6">
-                  <div className="tp-footer-payment text-md-end">
-                    <p>
-                      <Image src={pay} alt="pay" />
-                    </p>
-                  </div>
-                </div>
-              </div>
+                              </div>
             </div>
           </div>
         </div>

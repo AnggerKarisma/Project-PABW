@@ -35,7 +35,7 @@ const FooterTwo = () => {
                             </span>
                           </div>
                           <div className="tp-footer-contact-content">
-                            <p><a href="mailto:shofy@support.com">shuvoprogramer@gmail.com</a></p>
+                            <p><a href="mailto:shofy@support.com">mahakamstore@gmail.com</a></p>
                           </div>
                         </div>
                         <div className="tp-footer-contact-item d-flex align-items-start">
@@ -54,30 +54,30 @@ const FooterTwo = () => {
                 </div>
                 <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                   <div className="tp-footer-widget footer-col-4-2 mb-50">
-                    <h4 className="tp-footer-widget-title">My Account</h4>
+                    <h4 className="tp-footer-widget-title">Akun Saya</h4>
                     <div className="tp-footer-widget-content">
                       <ul>
-                        <li><a href="#">Track Orders</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Order History</a></li>
-                        <li><a href="#">Returns</a></li>
+                      <li><a href="#">Lacak Pesanan</a></li>
+<li><a href="#">Pengiriman</a></li>
+<li><a href="#">Daftar Keinginan</a></li>
+<li><a href="#">Akun Saya</a></li>
+<li><a href="#">Riwayat Pesanan</a></li>
+<li><a href="#">Pengembalian</a></li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-2 col-md-4 col-sm-5">
                   <div className="tp-footer-widget footer-col-4-3 mb-50">
-                    <h4 className="tp-footer-widget-title">Infomation</h4>
+                    <h4 className="tp-footer-widget-title">Infomasi</h4>
                     <div className="tp-footer-widget-content">
                       <ul>
-                        <li><a href="#">Our Story</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Latest News</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                      <li><a href="#">Tentang Kami</a></li>
+<li><a href="#">Karier</a></li>
+<li><a href="#">Kebijakan Privasi</a></li>
+<li><a href="#">Syarat & Ketentuan</a></li>
+<li><a href="#">Berita Terbaru</a></li>
+<li><a href="#">Hubungi Kami</a></li>
                       </ul>
                     </div>
                   </div>
@@ -116,18 +116,11 @@ const FooterTwo = () => {
                 <div className="row align-items-center">
                   <div className="col-md-6">
                     <div className="tp-footer-copyright">
-                      <p>© {new Date().getFullYear()} All Rights Reserved  |  Next js Template by
-                        <Link href="/">ThemePure</Link>.
+                      <p>© {new Date().getFullYear()} All Rights Reserved  |  React js by Kelompok 5 PABW
                       </p>
                     </div>
                   </div>
-                  <div className="col-md-6">
-                    <div className="tp-footer-payment text-md-end">
-                      <p>
-                        <Image src={pay} alt="pay" />
-                      </p>
-                    </div>
-                  </div>
+                 
                 </div>
               </div>
             </div>
