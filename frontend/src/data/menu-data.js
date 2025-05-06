@@ -7,7 +7,7 @@ const menu_data = [
   {
     id: 1,
     homes: true,
-    title: 'Home',
+    title: 'Beranda',
     link: '/',
     home_pages: [
       {
@@ -35,7 +35,7 @@ const menu_data = [
   {
     id: 2,
     products: true,
-    title: 'Products',
+    title: 'Produk',
     link: '/shop',
     product_pages: [
       {
@@ -48,7 +48,7 @@ const menu_data = [
         ]
       },
       {
-        title: 'Products',
+        title: 'Produk',
         link: '/product-details',
         mega_menus: [
           { title: 'Product Simple', link: '/product-details' },
@@ -83,7 +83,7 @@ const menu_data = [
   {
     id: 3,
     sub_menu: true,
-    title: 'Shop',
+    title: 'Toko',
     link: '/shop',
     sub_menus: [
       { title: 'Shop', link: '/shop' },
@@ -94,13 +94,13 @@ const menu_data = [
   {
     id: 4,
     single_link: true,
-    title: 'Coupons',
+    title: 'Coupons (apa ini?)',
     link: '/coupon',
   },
   {
     id: 5,
     sub_menu: true,
-    title: 'Blog',
+    title: 'Blog (ga pake Go)',
     link: '/blog',
     sub_menus: [
       { title: 'Blog Standard', link: '/blog' },
@@ -113,7 +113,7 @@ const menu_data = [
   {
     id: 6,
     single_link: true,
-    title: 'Contact',
+    title: 'Kontak',
     link: '/contact',
   },
 ]
@@ -125,7 +125,7 @@ export const mobile_menu = [
   {
     id: 1,
     homes: true,
-    title: 'Home',
+    title: 'Beranda',
     link: '/',
     home_pages: [
       {
@@ -153,7 +153,7 @@ export const mobile_menu = [
   {
     id: 2,
     sub_menu: true,
-    title: 'Products',
+    title: 'Produk',
     link: '/shop',
     sub_menus: [
       { title: 'Shop', link: '/shop' },
@@ -194,13 +194,13 @@ export const mobile_menu = [
   {
     id: 4,
     single_link: true,
-    title: 'Coupons',
+    title: 'Coupons (apa ini?)',
     link: '/coupon',
   },
   {
     id: 5,
     sub_menu: true,
-    title: 'Blog',
+    title: 'Blog (ga pake Go)',
     link: '/blog',
     sub_menus: [
       { title: 'Blog Standard', link: '/blog' },
@@ -213,7 +213,7 @@ export const mobile_menu = [
   {
     id: 6,
     single_link: true,
-    title: 'Contact',
+    title: 'Kontak',
     link: '/contact',
   },
 ]
