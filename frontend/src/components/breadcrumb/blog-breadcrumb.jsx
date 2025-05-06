@@ -1,5 +1,5 @@
 import React from "react";
-import bg from '@assets/img/breadcrumb/breadcrumb-bg-1.jpg';
+import bg from '@assets/img/banner/pele.jpg';
 
 const BlogBreadcrumb = () => {
   return (
@@ -11,10 +11,10 @@ const BlogBreadcrumb = () => {
         <div className="row">
           <div className="col-xxl-12">
             <div className="breadcrumb__content text-center p-relative z-index-1">
-              <h3 className="breadcrumb__title">Blog Kami</h3>
+              <h3 className="breadcrumb__title">Our Blog</h3>
               <div className="breadcrumb__list">
                 <span>
-                  <a href="#">Beranda</a>
+                  <a href="#">Home</a>
                 </span>
                 <span>Blog</span>
               </div>
