@@ -24,7 +24,7 @@ const FooterTwo = () => {
                     </div>
                     <div className="tp-footer-widget-content">
                       <div className="tp-footer-talk mb-20">
-                        <span>Got Questions? Call us</span>
+                        <span>Mau Nanya? Telepon saja kami</span>
                         <h4><a href="tel:670-413-90-762">+62895342503504</a></h4>
                       </div>
                       <div className="tp-footer-contact">
