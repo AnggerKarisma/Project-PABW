@@ -39,37 +39,37 @@ const ContactForm = () => {
       <div className="tp-contact-input-wrapper">
         <div className="tp-contact-input-box">
           <div className="tp-contact-input">
-            <input {...register("name", { required: `Name is required!` })} name="name" id="name" type="text" placeholder="Shahnewaz Sakil" />
+            <input {...register("name", { required: `Name is required!` })} name="name" id="name" type="text" placeholder="Ardi Dwi Saputra" />
           </div>
           <div className="tp-contact-input-title">
-            <label htmlFor="name">Your Name</label>
+            <label htmlFor="name">Nama</label>
           </div>
           <ErrorMsg msg={errors.name?.message} />
         </div>
         <div className="tp-contact-input-box">
           <div className="tp-contact-input">
-            <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="shofy@mail.com" />
+            <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="ardidwisaputra@mail.com" />
           </div>
           <div className="tp-contact-input-title">
-            <label htmlFor="email">Your Email</label>
+            <label htmlFor="email">Email</label>
           </div>
           <ErrorMsg msg={errors.email?.message} />
         </div>
         <div className="tp-contact-input-box">
           <div className="tp-contact-input">
-            <input {...register("subject", { required: `Subject is required!` })} name="subject" id="subject" type="text" placeholder="Write your subject" />
+            <input {...register("subject", { required: `Subject is required!` })} name="subject" id="subject" type="text" placeholder="Tulis Subjectmu" />
           </div>
           <div className="tp-contact-input-title">
-            <label htmlFor="subject">Subject</label>
+            <label htmlFor="subject">Subjek</label>
           </div>
           <ErrorMsg msg={errors.subject?.message} />
         </div>
         <div className="tp-contact-input-box">
           <div className="tp-contact-input">
-            <textarea {...register("message", { required: `Message is required!` })} id="message" name="message" placeholder="Write your message here..."/>
+            <textarea {...register("message", { required: `Message is required!` })} id="message" name="message" placeholder="Tulis pesanmu disini"/>
           </div>
           <div className="tp-contact-input-title">
-            <label htmlFor="message">Your Message</label>
+            <label htmlFor="message">Pesan-pesan</label>
           </div>
           <ErrorMsg msg={errors.message?.message} />
         </div>
@@ -77,12 +77,12 @@ const ContactForm = () => {
       <div className="tp-contact-suggetions mb-20">
         <div className="tp-contact-remeber">
           <input  {...register("remember", {required: `Terms and Conditions is required!`})} name="remember" id="remember" type="checkbox" />
-          <label htmlFor="remember">Save my name, email, and website in this browser for the next time I comment.</label>
+          <label htmlFor="remember">Simpan nama, email, dan situs web saya di browser ini untuk komentar saya berikutnya.</label>
           <ErrorMsg msg={errors.remember?.message} />
         </div>
       </div>
       <div className="tp-contact-btn">
-        <button type="submit">Send Message</button>
+        <button type="submit">Kirim Pesan</button>
       </div>
     </form>
   );

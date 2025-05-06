@@ -32,14 +32,14 @@ const CtaArea = () => {
           <div className="col-xl-7 col-lg-7">
             <div className="tp-subscribe-content">
               <span>Sale 20% off all store</span>
-              <h3 className="tp-subscribe-title">Subscribe our Newsletter</h3>
+              <h3 className="tp-subscribe-title">Subscribe Kami</h3>
             </div>
           </div>
           <div className="col-xl-5 col-lg-5">
             <div className="tp-subscribe-form">
               <form action="#">
                 <div className="tp-subscribe-input">
-                  <input type="email" placeholder="Enter Your Email" />
+                  <input type="email" placeholder="Masukkan Email" />
                   <button type="submit">Subscribe</button>
                 </div>
               </form>

@@ -20,7 +20,7 @@ const HeaderSearchForm = () => {
             onChange={(e) => setSearchText(e.target.value)}
             value={searchText}
             type="text"
-            placeholder="Cari Produk yang mau dicari..."
+            placeholder="Cari Produk..."
           />
         </div>
         <div className="tp-header-search-category">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GridTab, ListTab } from '@/svg';
 import GridItem from './grid-item';
 import ListItem from './list-item';
-import Pagination from '@/ui/Pagination';
+import Pagination from '../../../ui/Pagination';
 import BlogSidebar from '../blog-postox/blog-sidebar';
 import blogData from '@/data/blog-data';
 

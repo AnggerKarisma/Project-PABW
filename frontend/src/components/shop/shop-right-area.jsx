@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Pagination from "@/ui/Pagination";
+import Pagination from "../../ui/Pagination";
 import ProductItem from "../products/fashion/product-item";
 import CategoryFilter from "./shop-filter/category-filter";
 import ColorFilter from "./shop-filter/color-filter";

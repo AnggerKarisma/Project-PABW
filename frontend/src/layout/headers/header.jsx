@@ -53,19 +53,19 @@ const Header = () => {
             <div className="container">
               <div className="row align-items-center">
                 <div className="col-xl-2 col-lg-2 col-md-4 col-6">
-                  <div className="logo">
-                    <Link href="/">
-                      <Image src={logo} alt="logo" width={100} height={90}  />
-                      <span className="logo-text">Mahakam Store</span>
+                  <div className="logo" style={{ transform: 'translateX(-50px)' , display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                      <Image src={logo} alt="logo" width={90} height={80}  />
+                      <span className="logo-text" style={{ fontSize: '20px', fontWeight: 'bold', color: '#333' }}>Mahakam Store</span>
                     </Link>
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-7 d-none d-lg-block">
-                  <div className="tp-header-search pl-70">
+                  <div className="tp-header-search pl-80">
                     <HeaderSearchForm />
                   </div>
                 </div>
-                <div className="col-xl-4 col-lg-3 col-md-8 col-6">
+                <div className="col-xl-4 col-lg-3 col-md-8 col-6" style={{ transform: 'translateX(50px)' }}>
                   <HeaderMainRight setIsCanvasOpen={setIsCanvasOpen} />
                 </div>
               </div>
@@ -82,12 +82,12 @@ const Header = () => {
                     <div className="tp-header-category tp-category-menu tp-header-category-toggle">
                       <button
                         onClick={() => setIsCategoryActive(!isCategoryActive)}
-                        className="tp-category-menu-btn tp-category-menu-toggle"
+                        className="tp-category-menu-btn tp-category-menu-toggle" style={{ transform: 'translateX(-100px)' }}
                       >
                         <span>
                           <CategoryMenu />
                         </span>
-                        Semua Departemen Sirkel
+                        Semua Departemen
                       </button>
                       <nav className="tp-category-menu-content">
                         <HeaderCategory categoryType="electronics" isCategoryActive={isCategoryActive} />
@@ -97,7 +97,7 @@ const Header = () => {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="main-menu menu-style-1">
-                      <nav className="tp-main-menu-content">
+                      <nav className="tp-main-menu-content" style={{ transform: 'translateX(-5px)' }}>
                         <Menus />
                       </nav>
                     </div>
@@ -132,7 +132,8 @@ const Header = () => {
               <div className="col-xl-3 col-lg-3 col-md-3 col-6">
                 <div className="logo">
                   <Link href="/">
-                    <Image src={logo} alt="logo" />
+                    <Image src={logo} alt="logo" width={90} height={80}/>
+                    <span className="logo-text" style={{ fontSize: '20px', fontWeight: 'bold', color: '#333' }}>Mahakam Store</span>
                   </Link>
                 </div>
               </div>

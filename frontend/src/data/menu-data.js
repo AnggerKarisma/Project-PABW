@@ -94,13 +94,13 @@ const menu_data = [
   {
     id: 4,
     single_link: true,
-    title: 'Coupons (apa ini?)',
+    title: 'Coupons',
     link: '/coupon',
   },
   {
     id: 5,
     sub_menu: true,
-    title: 'Blog (ga pake Go)',
+    title: 'Blog',
     link: '/blog',
     sub_menus: [
       { title: 'Blog Standard', link: '/blog' },

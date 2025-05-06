@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 // internal
 import Menus from './header-com/menus';
-import logo from '@assets/img/logo/logo.svg';
+import logo from '@assets/img/logo/MahakamStoreLogo.png';
 import useSticky from '@/hooks/use-sticky';
 import useCartInfo from '@/hooks/use-cart-info';
 import { openCartMini } from '@/redux/features/cartSlice';
@@ -34,14 +34,14 @@ const HeaderTwo = ({ style_2 = false }) => {
                       <a href="#">
                         <span>
                           <Facebook />
-                        </span> 7500k Followers
+                        </span> Mahakam Store
                       </a>
                     </div>
                     <div className="tp-header-info-item">
                       <a href="tel:402-763-282-46">
                         <span>
                           <PhoneTwo />
-                        </span> +(880) 1622097651
+                        </span> +(62) 895 3425 0350
                       </a>
                     </div>
                   </div>
@@ -60,9 +60,10 @@ const HeaderTwo = ({ style_2 = false }) => {
               <div className="tp-mega-menu-wrapper p-relative">
                 <div className="row align-items-center">
                   <div className="col-xl-2 col-lg-5 col-md-5 col-sm-4 col-6">
-                    <div className="logo">
-                      <Link href="/">
-                        <Image src={logo} alt="logo" priority />
+                    <div className="logo"style={{ transform: 'translateX(-50px)' , display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                        <Image src={logo} alt="logo" priority width={90} height={80} />
+                        <span className="logo-text" style={{ fontSize: '20px', fontWeight: 'bold', color: '#333' }}>Mahakam Store</span>
                       </Link>
                     </div>
                   </div>
@@ -81,7 +82,7 @@ const HeaderTwo = ({ style_2 = false }) => {
                             onChange={(e) => setSearchText(e.target.value)}
                             value={searchText}
                             type="text"
-                            placeholder="Search for Products..." />
+                            placeholder="Cari Produk..." />
                           <button type="submit">
                             <Search />
                           </button>

@@ -2,7 +2,7 @@ import { useState } from "react";
 // internal
 import blogData from "@/data/blog-data";
 import BlogSidebar from "./blog-sidebar";
-import Pagination from "@/ui/Pagination";
+import Pagination from "../../../ui/Pagination";
 import BlogItem from "./blog-item";
 
 // blog items
