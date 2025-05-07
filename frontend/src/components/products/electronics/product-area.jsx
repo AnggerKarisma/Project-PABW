@@ -50,7 +50,7 @@ const ProductArea = () => {
           <div className="col-xl-5 col-lg-6 col-md-5">
             <div className="tp-section-title-wrapper mb-40">
               <h3 className="tp-section-title">
-                Trending Products
+                Trending Produk dari kami
                 <ShapeLine />
               </h3>
             </div>
