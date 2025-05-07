@@ -34,7 +34,7 @@ export default function Home() {
       <BlogArea/>
       <InstagramArea/>
       <CtaArea/>
-      <Footer/>
+      <Footer primary_style={true}/>
     </Wrapper>
   )
 }

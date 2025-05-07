@@ -29,7 +29,7 @@ const HomeThree = () => {
       <BeautyTestimonial/>
       <FeatureAreaTwo/>
       <InstagramAreaThree/>
-      <Footer style_3={true} />
+      <Footer primary_style={true} />
     </Wrapper>
   );
 };

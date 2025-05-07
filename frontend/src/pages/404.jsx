@@ -38,7 +38,7 @@ const ErrorPage = () => {
         </div>
       </section>
       {/* 404 area end */}
-      <Footer primary_style={true} />
+      <Footer style_2={true} />
     </Wrapper>
   );
 };

@@ -24,7 +24,7 @@ const CheckoutPage = () => {
       <HeaderTwo style_2={true} />
       <CommonBreadcrumb title="Checkout" subtitle="Checkout" bg_clr={true} />
       <CheckoutArea/>
-      <Footer style_2={true} />
+      <Footer primary_style={true} />
     </Wrapper>
   );
 };

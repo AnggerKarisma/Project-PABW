@@ -36,7 +36,7 @@ const ProfilePage = () => {
       <SEO pageTitle="Profile" />
       <HeaderTwo style_2={true} />
       <ProfileArea orderData={orderData} />
-      <Footer style_2={true} />
+      <Footer primary_style={true} />
     </Wrapper>
   );
 };

@@ -1,5 +1,5 @@
-import { useState } from "react";
-// internal
+import React, { useState } from "react";
+import bg from '@assets/img/banner/pele.jpg';
 import blogData from "@/data/blog-data";
 import BlogSidebar from "./blog-sidebar";
 import Pagination from "../../../ui/Pagination";
@@ -7,7 +7,6 @@ import BlogItem from "./blog-item";
 
 // blog items
 const blog_items = blogData.filter((b) => b.blog === "blog-postbox");
-
 
 const BlogPostboxArea = () => {
   const [filteredRows, setFilteredRows] = useState(blog_items);
@@ -20,9 +19,33 @@ const BlogPostboxArea = () => {
     setPageStart(startPage);
     setCountOfPage(pageCount);
   };
+
   return (
     <>
-      <section className="tp-postbox-area pt-120 pb-120">
+      {/* Blog Breadcrumb Section */}
+      <section
+        className="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay breadcrumb__style-3"
+        style={{ backgroundImage: `url(${bg.src})` }}
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-xxl-12">
+              <div className="breadcrumb__content text-center p-relative z-index-1">
+                <h3 className="breadcrumb__title">Our Blog</h3>
+                <div className="breadcrumb__list">
+                  <span>
+                    <a href="#">Beranda</a>
+                  </span>
+                  <span>Blog</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Postbox Section */}
+      <section className="tp-postbox-area pt-50 pb-50">
         <div className="container">
           <div className="row">
             <div className="col-xl-9 col-lg-8">

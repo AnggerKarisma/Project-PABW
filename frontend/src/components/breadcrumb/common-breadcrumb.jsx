@@ -1,26 +1,26 @@
 import React from "react";
+import bg from '@assets/img/banner/pele.jpg';
 
 const CommonBreadcrumb = ({
-  title,
-  subtitle,
-  center = false,
-  bg_clr = false,
+  title = "Default Title",
+  subtitle = "Default Subtitle",
+  center = true,
 }) => {
   return (
     <section
-      className={`breadcrumb__area ${
-        center ? "text-center" : ""
-      } include-bg pt-95 pb-50`}
-      style={{ backgroundColor: bg_clr && `#EFF1F5` }}
+      className="breadcrumb__area include-bg pt-150 pb-150 breadcrumb__overlay breadcrumb__style-3"
+      style={{ backgroundImage: `url(${bg.src})` }}
     >
       <div className="container">
         <div className="row">
           <div className="col-xxl-12">
-            <div className="breadcrumb__content p-relative z-index-1">
+            <div
+              className={`breadcrumb__content p-relative z-index-1 ${center ? "text-center" : ""}`}
+            >
               <h3 className="breadcrumb__title">{title}</h3>
               <div className="breadcrumb__list">
                 <span>
-                  <a href="#">Home</a>
+                  <a href="#">Beranda</a>
                 </span>
                 <span>{subtitle}</span>
               </div>

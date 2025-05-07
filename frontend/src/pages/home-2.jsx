@@ -31,7 +31,7 @@ const HomeTwo = () => {
       <BlogArea/>
       <FeatureAreaTwo/>
       <InstagramAreaTwo/>
-      <Footer style_2={true} />
+      <Footer primary_style={true} />
     </Wrapper>
   );
 };

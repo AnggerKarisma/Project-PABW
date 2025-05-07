@@ -13,7 +13,7 @@ const ForgotPage = () => {
       <HeaderTwo style_2={true} />
       <CommonBreadcrumb title="Forgot Password" subtitle="Reset Password" center={true} />
       <ForgotArea />
-      <Footer primary_style={true} />
+      <Footer style_2={true} />
     </Wrapper>
   );
 };

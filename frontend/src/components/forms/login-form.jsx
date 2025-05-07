@@ -38,7 +38,7 @@ const LoginForm = () => {
     })
       .then((data) => {
         if (data?.data) {
-          notifySuccess("Login successfully");
+          notifySuccess("Login Sukses");
           router.push(redirect || "/");
         }
         else {
@@ -52,10 +52,10 @@ const LoginForm = () => {
       <div className="tp-login-input-wrapper">
         <div className="tp-login-input-box">
           <div className="tp-login-input">
-            <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="shofy@mail.com" />
+            <input {...register("email", { required: `Email is required!` })} name="email" id="email" type="email" placeholder="mahakamstore@mail.com" />
           </div>
           <div className="tp-login-input-title">
-            <label htmlFor="email">Your Email</label>
+            <label htmlFor="email">Email</label>
           </div>
           <ErrorMsg msg={errors.email?.message} />
         </div>
@@ -83,11 +83,11 @@ const LoginForm = () => {
       </div>
       <div className="tp-login-suggetions d-sm-flex align-items-center justify-content-between mb-20">
         <div className="tp-login-remeber">
-          <input id="remeber" type="checkbox" />
-          <label htmlFor="remeber">Remember me</label>
+          <input id="remember" type="checkbox" />
+          <label htmlFor="remember">Ingat Saya</label>
         </div>
         <div className="tp-login-forgot">
-          <Link href="/forgot">Forgot Password?</Link>
+          <Link href="/forgot">Lupa Password?</Link>
         </div>
       </div>
       <div className="tp-login-bottom">
