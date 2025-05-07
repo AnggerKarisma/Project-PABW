@@ -66,7 +66,7 @@ const LoginForm = () => {
                 {...register("password", { required: `Password is required!` })}
                 id="password"
                 type={showPass ? "text" : "password"}
-                placeholder="Min. 6 character"
+                placeholder="Minimal 6 karakter"
               />
             </div>
             <div className="tp-login-input-eye" id="password-show-toggle">
