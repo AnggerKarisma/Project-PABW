@@ -36,7 +36,7 @@ const Header = () => {
                     <span>
                       <ShippingCar />
                     </span>
-                    <p>GRATIS pengantaran kalo klean masuk ke kelompok kami</p>
+                    <p>PROMO GRATIS PENGANTARAN JIKA MASUK KELOMPOK KAMI</p>
                   </div>
                 </div>
                 <div className="col-md-6">
@@ -87,7 +87,7 @@ const Header = () => {
                         <span>
                           <CategoryMenu />
                         </span>
-                        Semua Departemen
+                        Semua Kategori
                       </button>
                       <nav className="tp-category-menu-content">
                         <HeaderCategory categoryType="electronics" isCategoryActive={isCategoryActive} />
@@ -110,9 +110,9 @@ const Header = () => {
                         </span>
                       </div>
                       <div className="tp-header-contact-content">
-                        <h5>Hotline:</h5>
+                        <h5>Hotline Mahakam Store :</h5>
                         <p>
-                          <a href="tel:966-595-035-008">+(62) 895 3425 03504 (Sdr. Ardi)</a>
+                          <a href="tel:966-595-035-008">+(62) 895 3425 03504</a>
                         </p>
                       </div>
                     </div>
