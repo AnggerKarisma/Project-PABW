@@ -20,9 +20,9 @@ const ShopPageTwo = ({ searchParams }: ShopPageTwoProps) => {
   return (
     <section>
       <div className="p-10 w-full bg-gray-300 dark:bg-gray-800 text-4xl flex items-center justify-center gap-2">
-        <Link href={"/"}>Home</Link>
+        <Link href={"/"}>Beranda</Link>
         <p>/</p>
-        <Link href={"/shop"}>Shop</Link>
+        <Link href={"/my-shop"}>Toko Saya</Link>
       </div>
 
       <div className="p-4 lg:px-16">
