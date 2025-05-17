@@ -2,17 +2,17 @@ import SearchCustomer from "@/components/dashboard/customer/SearchCustomer";
 import Loader from "@/components/others/Loader";
 import Pagination from "@/components/others/Pagination";
 import Image from "next/image";
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 
 const CustomersPage = () => {
-  // Dummy data for demonstration
+  // Data dummy untuk demo
   const dummyCustomers = [
     {
       id: 1,
       name: "John Doe",
       email: "john@example.com",
       phone: "1234567890",
-      address: "123 Main St, Anytown, USA",
+      address: "Jalan Utama 123, Kota Contoh, Indonesia",
       image: "/images/people/person.jpg",
     },
     {
@@ -20,7 +20,7 @@ const CustomersPage = () => {
       name: "Jane Smith",
       email: "jane@example.com",
       phone: "9876543210",
-      address: "456 Elm St, Othertown, USA",
+      address: "Jalan Elm 456, Kota Lain, Indonesia",
       image: "/images/people/person.jpg",
     },
   ];
@@ -29,7 +29,7 @@ const CustomersPage = () => {
     <div className="max-w-screen-xl w-full p-4 my-4 mx-auto dark:bg-slate-900 rounded-md">
       <div className="flex items-center justify-between gap-2 mb-6">
         <h2 className="text-2xl font-semibold text-gray-900 dark:text-white ">
-          Customers
+          Pelanggan
         </h2>
         <SearchCustomer />
       </div>
@@ -47,7 +47,7 @@ const CustomersPage = () => {
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                Name
+                Nama
               </th>
               <th
                 scope="col"
@@ -59,19 +59,19 @@ const CustomersPage = () => {
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                Phone
+                Telepon
               </th>
               <th
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                Address
+                Alamat
               </th>
               <th
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                Image
+                Gambar
               </th>
             </tr>
           </thead>

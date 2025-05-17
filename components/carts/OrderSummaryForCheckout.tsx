@@ -23,34 +23,34 @@ const OrderSummaryForCheckout = () => {
 
   return (
     <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
-      {/* ordered items details */}
+      {/* detail item pesanan */}
       <div>
-        <h2 className="text-lg font-semibold my-2 lg:p-4">Order Items</h2>
+        <h2 className="text-lg font-semibold my-2 lg:p-4">Detail Pesanan</h2>
         <CartItemsDetails />
         <Separator className="dark:bg-white/50 mb-2" />
       </div>
 
-      {/* order summary for order place */}
+      {/* ringkasan pesanan untuk konfirmasi */}
       <div className="lg:px-4">
         <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-          Order Summary
+          Ringkasan Pesanan
         </h2>
         <div className="flex justify-between mb-4">
           <span className="text-gray-700 dark:text-gray-300">Subtotal:</span>
           <span className="text-gray-900 dark:text-white">
-            ${formatPrice(getTotalPrice())}
+            Rp {formatPrice(getTotalPrice())}
           </span>
         </div>
         <div className="flex justify-between mb-4">
-          <span className="text-gray-700 dark:text-gray-300">Shipping:</span>
+          <span className="text-gray-700 dark:text-gray-300">Ongkos Kirim:</span>
           <span className="text-gray-900 dark:text-white">
-            ${formatPrice(getShippingFee())}
+            Rp {formatPrice(getShippingFee())}
           </span>
         </div>
         <div className="flex justify-between mb-4">
-          <span className="text-gray-700 dark:text-gray-300">Tax:</span>
+          <span className="text-gray-700 dark:text-gray-300">Pajak:</span>
           <span className="text-gray-900 dark:text-white">
-            ${formatPrice(getTax())}
+            Rp {formatPrice(getTax())}
           </span>
         </div>
         <div className="flex justify-between">
@@ -58,11 +58,11 @@ const OrderSummaryForCheckout = () => {
             Total:
           </span>
           <span className="text-xl font-semibold text-gray-900 dark:text-white">
-            ${formatPrice(getTotalAmount())}
+            Rp {formatPrice(getTotalAmount())}
           </span>
         </div>
         <Button className="text-xl mt-6 bg-blue-500 dark:bg-blue-600 text-white py-6 px-12 hover:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none rounded-full hover:ring-2">
-          Place Order
+          Pesan Sekarang
         </Button>
       </div>
     </div>

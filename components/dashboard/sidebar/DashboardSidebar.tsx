@@ -13,50 +13,50 @@ import {
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const DashboardSidebar = () => {
+const SidebarDashboard = () => {
 
   const pathname = usePathname();
 
-  const dashboardLinks = [
+  const tautanDashboard = [
     {
       link: "/dashboard",
-      label: "Home",
+      label: "Beranda",
       icon: <Home size={20} />,
       isActive: pathname === "/dashboard",
     },
     {
       link: "/dashboard/orders",
-      label: "Orders",
+      label: "Pesanan",
       icon: <ClipboardList size={20} />,
       isActive: pathname.includes("dashboard/orders"),
     },
     {
       link: "/dashboard/products",
-      label: "Products",
+      label: "Produk",
       icon: <Box size={20} />,
       isActive: pathname.includes("dashboard/products"),
     },
     {
       link: "/dashboard/categories",
-      label: "Categories",
+      label: "Kategori",
       icon: <Layers size={20} />,
       isActive: pathname.includes("dashboard/categories"),
     },
     {
       link: "/dashboard/banners",
-      label: "Banners",
+      label: "Banner",
       icon: <Images size={20} />,
       isActive: pathname.includes("dashboard/banners"),
     },
     {
       link: "/dashboard/blogs",
-      label: "Blogs",
+      label: "Blog",
       icon: <Book size={20} />,
       isActive: pathname.includes("dashboard/blogs"),
     },
     {
       link: "/dashboard/customers",
-      label: "Customers",
+      label: "Pelanggan",
       icon: <Users size={20} />,
       isActive: pathname.includes("dashboard/customers"),
     },
@@ -64,17 +64,20 @@ const DashboardSidebar = () => {
 
   return (
     <nav className="w-64 min-h-[88vh] px-2 py-4 border-r-2 hidden lg:block">
-      {/* Sidebar Links */}
+      {/* Tautan Sidebar */}
       <div>
         <ul className="flex flex-col gap-2 items-start justify-center">
-          {dashboardLinks.map((link) => (
-            <li key={link.label} className="w-full">
+          {tautanDashboard.map((tautan) => (
+            <li key={tautan.label} className="w-full">
               <Link
-                href={link.link}
-                className={cn("flex items-center text-lg w-full gap-2  p-2 rounded-md transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-800", link.isActive && 'bg-slate-300  dark:bg-slate-700')}
+                href={tautan.link}
+                className={cn(
+                  "flex items-center text-lg w-full gap-2 p-2 rounded-md transition-colors duration-300 hover:bg-gray-200 dark:hover:bg-gray-800",
+                  tautan.isActive && "bg-slate-300 dark:bg-slate-700"
+                )}
               >
-                {link.icon}
-                <span>{link.label}</span>
+                {tautan.icon}
+                <span>{tautan.label}</span>
               </Link>
             </li>
           ))}
@@ -84,4 +87,4 @@ const DashboardSidebar = () => {
   );
 };
 
-export default DashboardSidebar;
+export default SidebarDashboard;

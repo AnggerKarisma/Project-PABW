@@ -14,8 +14,8 @@ const ProductTab = ({ aboutItem = [], reviews = [] }: ProductTabsProps) => {
     <div>
       <Tabs defaultValue="aboutitem" className="w-full p-4 -mt-2 ">
         <TabsList className="bg-transparent">
-          <TabsTrigger value="aboutitem">About This Item</TabsTrigger>
-          <TabsTrigger value="reviews">Reviews</TabsTrigger>
+          <TabsTrigger value="aboutitem">Tentang Produk</TabsTrigger>
+          <TabsTrigger value="reviews">Ulasan</TabsTrigger>
         </TabsList>
         <TabsContent value="aboutitem">
           <div>
@@ -28,7 +28,7 @@ const ProductTab = ({ aboutItem = [], reviews = [] }: ProductTabsProps) => {
         </TabsContent>
         <TabsContent value="reviews">
           {reviews?.length === 0 ? (
-            <div>No Review Found For This Product</div>
+            <div>Tidak ada ulasan untuk produk ini</div>
           ) : (
             <div className="grid grid-cols-1 gap-2">
               {reviews.map((review, index) => (
@@ -52,7 +52,7 @@ const ProductTab = ({ aboutItem = [], reviews = [] }: ProductTabsProps) => {
                   <div className="flex items-center gap-2">
                     <Image
                       src={review.image || ""}
-                      alt="person"
+                      alt="foto pengguna"
                       width={48}
                       height={48}
                       className="rounded-full object-cover w-12 h-12"

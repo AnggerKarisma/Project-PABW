@@ -22,12 +22,12 @@ interface ProductFormData {
 
 // Define the schema for form validation
 const productSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  price: z.string().min(1, "Price is required"),
-  category: z.string().min(1, "Category is required"),
-  brand: z.string().min(1, "Brand is required"),
+  name: z.string().min(1, "Nama wajib diisi"),
+  price: z.string().min(1, "Harga wajib diisi"),
+  category: z.string().min(1, "Kategori wajib diisi"),
+  brand: z.string().min(1, "Merek wajib diisi"),
   type: z.enum(["featured", "top-rated", "most-popular", "new-arrivals"]),
-  description: z.string().min(1, "Description is required"),
+  description: z.string().min(1, "Deskripsi wajib diisi"),
   aboutItem: z.string().optional(),
   color: z.string().optional(),
   discount: z.string().optional(),
@@ -70,37 +70,28 @@ const ProductForm = () => {
   };
 
   const onSubmit = (data: ProductFormData) => {
-    // Create FormData to handle files properly
     const formData = new FormData();
 
-    // Add form fields to FormData
     Object.entries(data).forEach(([key, value]) => {
       if (value !== undefined && value !== null) {
         formData.append(key, String(value));
       }
     });
 
-    // Add files to FormData
     selectedFiles.forEach((file) => {
       formData.append("images", file);
     });
 
-    // Process the data for API submission
     const processedData = {
       ...data,
-      // Convert color string to array
       color: data.color ? data.color.split(",").map((c) => c.trim()) : [],
-      // Convert discount string to number if provided
       discount: data.discount ? Number(data.discount) : undefined,
-      // Add the files
       images: selectedFiles,
     };
 
-    // Here you would send the formData to your API
-    console.log("Form data submitted:", processedData);
-    console.log("Files:", selectedFiles);
+    console.log("Data formulir terkirim:", processedData);
+    console.log("File:", selectedFiles);
 
-    // Reset form and selected files
     setSelectedFiles([]);
     if (fileInputRef.current) {
       fileInputRef.current.value = "";
@@ -111,7 +102,7 @@ const ProductForm = () => {
   return (
     <div className="max-w-screen-xl mx-auto w-full bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 my-4">
       <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-        Add New Product
+        Tambah Produk Baru
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
@@ -122,13 +113,14 @@ const ProductForm = () => {
             htmlFor="name"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Product Name
+            Nama Produk
           </Label>
           <Input
             id="name"
             type="text"
             className="mt-1 p-2 block w-full rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("name")}
+            placeholder="Masukkan nama produk"
           />
           {errors.name && (
             <span className="text-red-500">{errors.name.message}</span>
@@ -140,13 +132,14 @@ const ProductForm = () => {
             htmlFor="price"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Price
+            Harga
           </Label>
           <Input
             id="price"
             type="text"
             className="mt-1 p-2 block w-full rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("price")}
+            placeholder="Masukkan harga produk"
           />
           {errors.price && (
             <span className="text-red-500">{errors.price.message}</span>
@@ -158,7 +151,7 @@ const ProductForm = () => {
             htmlFor="discount"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Discount (%)
+            Diskon (%)
           </Label>
           <Input
             id="discount"
@@ -167,6 +160,7 @@ const ProductForm = () => {
             max="100"
             className="mt-1 p-2 block w-full rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("discount")}
+            placeholder="Masukkan diskon (jika ada)"
           />
           {errors.discount && (
             <span className="text-red-500">{errors.discount.message}</span>
@@ -178,13 +172,14 @@ const ProductForm = () => {
             htmlFor="category"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Category
+            Kategori
           </Label>
           <Input
             id="category"
             type="text"
             className="mt-1 p-2 block w-full rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("category")}
+            placeholder="Masukkan kategori produk"
           />
           {errors.category && (
             <span className="text-red-500">{errors.category.message}</span>
@@ -196,13 +191,14 @@ const ProductForm = () => {
             htmlFor="brand"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Brand
+            Merek
           </Label>
           <Input
             id="brand"
             type="text"
             className="mt-1 p-2 block w-full rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("brand")}
+            placeholder="Masukkan merek produk"
           />
           {errors.brand && (
             <span className="text-red-500">{errors.brand.message}</span>
@@ -214,17 +210,17 @@ const ProductForm = () => {
             htmlFor="type"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Product Type
+            Tipe Produk
           </Label>
           <select
             id="type"
             className="mt-1 p-2 block w-full dark:bg-slate-950 rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("type")}
           >
-            <option value="featured">Featured</option>
-            <option value="top-rated">Top Rated</option>
-            <option value="most-popular">Most Popular</option>
-            <option value="new-arrivals">New Arrivals</option>
+            <option value="featured">Unggulan</option>
+            <option value="top-rated">Paling Favorit</option>
+            <option value="most-popular">Terpopuler</option>
+            <option value="new-arrivals">Produk Baru</option>
           </select>
           {errors.type && (
             <span className="text-red-500">{errors.type.message}</span>
@@ -236,12 +232,13 @@ const ProductForm = () => {
             htmlFor="description"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Description
+            Deskripsi
           </Label>
           <textarea
             id="description"
             className="mt-1 p-2 block border bg-white dark:bg-slate-950 rounded-md w-full border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("description")}
+            placeholder="Masukkan deskripsi produk"
           />
           {errors.description && (
             <span className="text-red-500">{errors.description.message}</span>
@@ -253,12 +250,12 @@ const ProductForm = () => {
             htmlFor="color"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Available Colors (comma separated)
+            Warna Tersedia (pisahkan dengan koma)
           </Label>
           <Input
             id="color"
             type="text"
-            placeholder="Red, Blue, Green"
+            placeholder="Merah, Biru, Hijau"
             className="mt-1 p-2 block border dark:bg-slate-950 w-full rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("color")}
           />
@@ -272,12 +269,13 @@ const ProductForm = () => {
             htmlFor="aboutItem"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            About Item
+            Tentang Produk
           </Label>
           <textarea
             id="aboutItem"
             className="mt-1 border p-2 block w-full rounded-md dark:bg-slate-950 border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
             {...register("aboutItem")}
+            placeholder="Info tambahan tentang produk"
           />
           {errors.aboutItem && (
             <span className="text-red-500">{errors.aboutItem.message}</span>
@@ -289,10 +287,10 @@ const ProductForm = () => {
             htmlFor="images"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
-            Product Images
+            Gambar Produk
           </Label>
           <p className="text-gray-500 text-sm mb-2">
-            You can upload multiple images for this product.
+            Kamu bisa mengunggah beberapa gambar untuk produk ini.
           </p>
           <Input
             id="images"
@@ -306,7 +304,7 @@ const ProductForm = () => {
           {selectedFiles.length > 0 && (
             <div className="mt-4">
               <p className="text-sm font-medium text-gray-700 dark:text-white mb-2">
-                Selected Files ({selectedFiles.length}):
+                File Terpilih ({selectedFiles.length}):
               </p>
               <div className="flex flex-wrap gap-2">
                 {selectedFiles.map((file, index) => (
@@ -331,7 +329,7 @@ const ProductForm = () => {
           )}
 
           {selectedFiles.length === 0 && (
-            <span className="text-red-500">At least one image is required</span>
+            <span className="text-red-500">Minimal satu gambar wajib diunggah</span>
           )}
         </div>
 
@@ -341,7 +339,7 @@ const ProductForm = () => {
             disabled={isSubmitting || selectedFiles.length === 0}
             className="bg-blue-600 hover:bg-blue-700 text-white"
           >
-            {isSubmitting ? "Submitting..." : "Add Product"}
+            {isSubmitting ? "Sedang mengirim..." : "Tambah Produk"}
           </Button>
         </div>
       </form>

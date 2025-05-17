@@ -18,20 +18,20 @@ const ProductActions = () => {
           </div>
         </PopoverTrigger>
         <PopoverContent className="text-start">
-        <Link
+          <Link
             href={`/dashboard/products/id`}
-            className="py-2 px-4 rounded-md w-full  block hover:bg-slate-200 dark:hover:bg-slate-900"
+            className="py-2 px-4 rounded-md w-full block hover:bg-slate-200 dark:hover:bg-slate-900"
           >
-            View Product
+            Lihat Produk
           </Link>
           <Link
             href={`/dashboard/products/id`}
-            className="py-2 px-4 rounded-md w-full  block hover:bg-slate-200 dark:hover:bg-slate-900"
+            className="py-2 px-4 rounded-md w-full block hover:bg-slate-200 dark:hover:bg-slate-900"
           >
-            Update Product
+            Perbarui Produk
           </Link>
           <button className="w-full text-start hover:bg-slate-200 dark:hover:bg-slate-900 py-2 px-4 rounded-md">
-            Delete Product
+            Hapus Produk
           </button>
         </PopoverContent>
       </Popover>
