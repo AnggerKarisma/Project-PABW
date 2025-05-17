@@ -34,8 +34,8 @@ const HeaderOne = () => {
   const { openModal } = useMobileSearchModal();
 
   return (
-    <header className="sticky bg-white dark:bg-slate-950 top-0 z-50 w-full">
-      <div className="max-w-screen-xl mx-auto  p-4 md:py-4 md:px-8 flex items-center justify-between gap-2">
+   <header className="bg-white dark:bg-gray-900 shadow sticky top-0 left-0 right-0 z-50">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         <Logo />
         <ul className="hidden lg:flex items-center gap-4 xl:gap-6 text-lg ">
           {links.map((link) => (

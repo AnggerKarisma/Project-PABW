@@ -19,7 +19,7 @@ const DashboardHeader = () => {
             variant={"destructive"}
             className="flex items-center gap-2"
           >
-            <LogOut /> Exit
+            <LogOut /> Keluar
           </Button>
           <DashboardMobileHeader />
         </div>
