@@ -20,7 +20,7 @@ const OrderActions = () => {
   return (
     <div>
       <Popover>
-        <PopoverTrigger className="">
+        <PopoverTrigger>
           <div className="flex items-center justify-center hover:bg-slate-200 p-2 rounded-full dark:hover:bg-slate-900 duration-200">
             <MoreHorizontal />
           </div>
@@ -28,23 +28,23 @@ const OrderActions = () => {
         <PopoverContent className="text-start">
           <Link
             href={`/dashboard/orders/id`}
-            className="py-2 px-4 rounded-md w-full  block hover:bg-slate-200 dark:hover:bg-slate-900"
+            className="py-2 px-4 rounded-md w-full block hover:bg-slate-200 dark:hover:bg-slate-900"
           >
-            View Details
+            Lihat Detail
           </Link>
           <Select>
             <SelectTrigger className="w-full text-base px-4 border-none outline-none focus:ring-offset-0 focus:ring-0 focus-within:outline-none hover:bg-slate-200 dark:hover:bg-slate-900">
-              <SelectValue placeholder="Change Status" />
+              <SelectValue placeholder="Ubah Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="pending">Pending</SelectItem>
-              <SelectItem value="on the way">On The Way</SelectItem>
-              <SelectItem value="delivered">Delivered</SelectItem>
-              <SelectItem value="shiped">Shiped</SelectItem>
+              <SelectItem value="pending">Menunggu</SelectItem>
+              <SelectItem value="on the way">Sedang Dikirim</SelectItem>
+              <SelectItem value="delivered">Terkirim</SelectItem>
+              <SelectItem value="shiped">Dikirim</SelectItem>
             </SelectContent>
           </Select>
           <button className="w-full text-start hover:bg-slate-200 dark:hover:bg-slate-900 py-2 px-4 rounded-md">
-            Cancel Order{" "}
+            Batalkan Pesanan
           </button>
         </PopoverContent>
       </Popover>

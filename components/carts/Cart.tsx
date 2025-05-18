@@ -27,9 +27,9 @@ const Cart = () => {
   const [showSheet, setShowSheet] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
-  const handleRovomeItemFromCart = (item: CartItem) => {
+  const handleRemoveItemFromCart = (item: CartItem) => {
     removeFromCart(item.id);
-    showToast("Item Removed from Cart", item?.images[0] as string, item.name);
+    showToast("Barang berhasil dihapus dari keranjang", item?.images[0] as string, item.name);
   };
 
   useEffect(() => {
@@ -60,11 +60,11 @@ const Cart = () => {
         </SheetTrigger>
         <SheetContent className="w-[90%] overflow-y-auto md:overflow-y-hidden">
           <SheetHeader>
-            <SheetTitle>Shopping Cart</SheetTitle>
+            <SheetTitle>Keranjang Belanja</SheetTitle>
             <Separator />
             <SheetDescription className="flex items-start justify-between gap-4 flex-col h-[90vh]">
               <div className="overflow-y-auto">
-                {/* cart items here */}
+                {/* Daftar barang di keranjang */}
                 {cartItems.map((item) => (
                   <div
                     key={item.id}
@@ -74,7 +74,7 @@ const Cart = () => {
                     <Image
                       className="rounded-full object-contain"
                       src={item?.images && item?.images[0]}
-                      alt="product iamge"
+                      alt="gambar produk"
                       width={70}
                       height={70}
                     />
@@ -85,11 +85,11 @@ const Cart = () => {
 
                       <div className="flex items-center justify-between">
                         <p className="text-lg border border-green-500 px-2 rounded-md text-green-500">
-                          ${item.price}
+                          Rp {item.price}
                         </p>
-                        <p className="text-lg">Qty : {item.quantity}</p>
+                        <p className="text-lg">Jumlah : {item.quantity}</p>
                         <Button
-                          onClick={() => handleRovomeItemFromCart(item)}
+                          onClick={() => handleRemoveItemFromCart(item)}
                           variant={"destructive"}
                           size={"sm"}
                           className="rounded-full"
@@ -102,14 +102,14 @@ const Cart = () => {
                 ))}
               </div>
 
-              {/* subtotal and buttons here */}
+              {/* subtotal dan tombol aksi */}
               <div className="w-full">
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="text-xl text-center font-semibold">
-                    Your Subtotal :
+                    Total Harga :
                   </h3>
                   <p className="text-xl text-center font-bold text-green-500">
-                    $ {formatPrice(getTotalPrice())}
+                    Rp {formatPrice(getTotalPrice())}
                   </p>
                 </div>
 

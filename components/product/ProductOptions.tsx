@@ -32,15 +32,15 @@ const ProductOptions = ({ product }: { product: Product }) => {
 
   const handleAddToCart = () => {
     addToCart({ ...product, quantity: 1, selectedColor: "" });
-    showToast("Item Added To Cart", images[0], name);
+    showToast("Produk ditambahkan ke keranjang", images[0], name);
   };
 
   const handleAddToWishList = () => {
     if (isInWishlist(product.id)) {
-      showToast("Item Already Exist In Wishlist", images[0], name);
+      showToast("Produk sudah ada di daftar keinginan", images[0], name);
     } else {
       addToWishlist(product);
-      showToast("Item Added To Wishlist", images[0], name);
+      showToast("Produk ditambahkan ke daftar keinginan", images[0], name);
     }
   };
 
@@ -64,7 +64,7 @@ const ProductOptions = ({ product }: { product: Product }) => {
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Add To Wishlist</p>
+            <p>Tambah ke Daftar Keinginan</p>
           </TooltipContent>
         </Tooltip>
 
@@ -78,7 +78,7 @@ const ProductOptions = ({ product }: { product: Product }) => {
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Quick View</p>
+            <p>Lihat Cepat</p>
           </TooltipContent>
         </Tooltip>
 
@@ -92,7 +92,7 @@ const ProductOptions = ({ product }: { product: Product }) => {
             </div>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Add To Cart</p>
+            <p>Tambah ke Keranjang</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

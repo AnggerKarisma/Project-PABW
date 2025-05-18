@@ -10,13 +10,13 @@ import { Bell } from "lucide-react";
 const Notification = () => {
 
   const notifications = [
-    { id: 1, message: "New order received from John Doe", time: "10:00 AM" },
-    { id: 2, message: "Payment processed for order #123456", time: "10:30 AM" },
-    { id: 3, message: "Low stock alert: Item XYZ", time: "11:00 AM" },
-    { id: 4, message: "Shipment for order #123457 delayed", time: "11:30 AM" },
+    { id: 1, message: "Pesanan baru diterima dari John Doe", time: "10:00 AM" },
+    { id: 2, message: "Pembayaran diproses untuk pesanan #123456", time: "10:30 AM" },
+    { id: 3, message: "Peringatan stok rendah: Barang XYZ", time: "11:00 AM" },
+    { id: 4, message: "Pengiriman pesanan #123457 tertunda", time: "11:30 AM" },
     {
       id: 5,
-      message: "New review submitted for product ABC",
+      message: "Ulasan baru dikirim untuk produk ABC",
       time: "12:00 PM",
     },
   ];
@@ -29,7 +29,7 @@ const Notification = () => {
       <PopoverContent>
         <div className="">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            Notifications
+            Notifikasi
           </h2>
           <div className="divide-y divide-gray-200 dark:divide-gray-700">
             {notifications.map((notification) => (

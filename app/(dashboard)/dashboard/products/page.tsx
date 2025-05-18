@@ -15,19 +15,19 @@ const ProductsPage = () => {
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Image
+                Gambar
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Name
+                Nama
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Price
+                Harga
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Category
+                Kategori
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Actions
+                Aksi
               </th>
             </tr>
           </thead>
@@ -58,7 +58,7 @@ const ProductsPage = () => {
           </tbody>
         </table>
         <Suspense fallback={<Loader />}>
-          <Pagination totalPages={10} currentPage={1} pageName="productpage" />
+          <Pagination totalPages={10} currentPage={1} pageName="halamanproduk" />
         </Suspense>
       </div>
     </div>

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -7,22 +7,20 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
-// Defined Zod schema for form validation
+// Skema validasi Zod
 const schema = z.object({
-  firstName: z.string().min(3, "First Name is required"),
-  lastName: z.string().min(3, "Last Name is required"),
-  address: z.string().min(5, "Address is required"),
-  phone: z.string().min(8, "Phone is required"),
-  city: z.string().min(3, "City is required"),
-  zip: z.string().min(5, "ZIP Code is required"),
-  country: z.string().min(2, "Country is required"),
+  firstName: z.string().min(3, "Nama depan wajib diisi (minimal 3 karakter)"),
+  lastName: z.string().min(3, "Nama belakang wajib diisi (minimal 3 karakter)"),
+  address: z.string().min(5, "Alamat wajib diisi (minimal 5 karakter)"),
+  phone: z.string().min(8, "Nomor telepon wajib diisi (minimal 8 karakter)"),
+  city: z.string().min(3, "Kota wajib diisi (minimal 3 karakter)"),
+  zip: z.string().min(5, "Kode pos wajib diisi (minimal 5 karakter)"),
+  country: z.string().min(2, "Negara wajib diisi (minimal 2 karakter)"),
 });
 
-// Defined types for form data
 type FormData = z.infer<typeof schema>;
 
 const CheckoutForm: React.FC = () => {
-  // Initialize React Hook Form
   const {
     register,
     handleSubmit,
@@ -31,7 +29,6 @@ const CheckoutForm: React.FC = () => {
     resolver: zodResolver(schema),
   });
 
-  // Handle form submission
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log(data);
   };
@@ -41,7 +38,7 @@ const CheckoutForm: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
-            <Label htmlFor="firstName">First Name</Label>
+            <Label htmlFor="firstName">Nama Depan</Label>
             <Input
               id="firstName"
               {...register("firstName")}
@@ -52,7 +49,7 @@ const CheckoutForm: React.FC = () => {
             )}
           </div>
           <div>
-            <Label htmlFor="lastName">Last Name</Label>
+            <Label htmlFor="lastName">Nama Belakang</Label>
             <Input
               id="lastName"
               {...register("lastName")}
@@ -64,7 +61,7 @@ const CheckoutForm: React.FC = () => {
           </div>
         </div>
         <div>
-          <Label htmlFor="address">Address</Label>
+          <Label htmlFor="address">Alamat</Label>
           <Input
             id="address"
             {...register("address")}
@@ -76,7 +73,7 @@ const CheckoutForm: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
-            <Label htmlFor="phone">Phone</Label>
+            <Label htmlFor="phone">Nomor Telepon</Label>
             <Input
               type="tel"
               id="phone"
@@ -88,7 +85,7 @@ const CheckoutForm: React.FC = () => {
             )}
           </div>
           <div>
-            <Label htmlFor="city">City</Label>
+            <Label htmlFor="city">Kota</Label>
             <Input
               id="city"
               {...register("city")}
@@ -101,7 +98,7 @@ const CheckoutForm: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div>
-            <Label htmlFor="zip">ZIP Code</Label>
+            <Label htmlFor="zip">Kode Pos</Label>
             <Input
               id="zip"
               {...register("zip")}
@@ -112,11 +109,11 @@ const CheckoutForm: React.FC = () => {
             )}
           </div>
           <div>
-            <Label htmlFor="country">Country</Label>
+            <Label htmlFor="country">Negara</Label>
             <Input
               id="country"
               {...register("country")}
-              className="w-full p-6 border border-gray-300 dark:border-gray-700 rounded-lg  focus:outline-none"
+              className="w-full p-6 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none"
             />
             {errors.country && (
               <span className="text-red-500">{errors.country.message}</span>
@@ -124,7 +121,7 @@ const CheckoutForm: React.FC = () => {
           </div>
         </div>
         <div className="flex items-center justify-end">
-          <Button type="submit">Save</Button>
+          <Button type="submit">Simpan</Button>
         </div>
       </form>
     </div>

@@ -29,43 +29,43 @@ const DashboardMobileHeader = () => {
   const dashboardLinks = [
     {
       link: "/dashboard",
-      label: "Home",
+      label: "Beranda",
       icon: <Home size={20} />,
       isActive: pathname === '/dashboard',
     },
     {
       link: "/dashboard/orders",
-      label: "Orders",
+      label: "Pesanan",
       icon: <ClipboardList size={20} />,
       isActive: pathname.includes("dashboard/orders"),
     },
     {
       link: "/dashboard/products",
-      label: "Products",
+      label: "Produk",
       icon: <Box size={20} />,
       isActive: pathname.includes("dashboard/products"),
     },
     {
       link: "/dashboard/categories",
-      label: "Categories",
+      label: "Kategori",
       icon: <Layers size={20} />,
       isActive: pathname.includes("dashboard/categories"),
     },
     {
       link: "/dashboard/banners",
-      label: "Banners",
+      label: "Banner",
       icon: <Images size={20} />,
       isActive: pathname.includes("dashboard/banners"),
     },
     {
       link: "/dashboard/blogs",
-      label: "Blogs",
+      label: "Blog",
       icon: <Book size={20} />,
       isActive: pathname.includes("dashboard/blogs"),
     },
     {
       link: "/dashboard/customers",
-      label: "Customers",
+      label: "Pelanggan",
       icon: <Users size={20} />,
       isActive: pathname.includes("dashboard/customers"),
     },
@@ -79,7 +79,7 @@ const DashboardMobileHeader = () => {
         </SheetTrigger>
         <SheetContent>
           <SheetHeader>
-            <SheetTitle>Mobile Menu</SheetTitle>
+            <SheetTitle>Menu Mobile</SheetTitle>
             <SheetDescription>
               <ul className="flex flex-col gap-2 items-start justify-center">
                 {dashboardLinks.map((link) => (
