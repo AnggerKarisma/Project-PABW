@@ -1,22 +1,11 @@
 "use client";
-<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
-=======
-
-import React from "react";
->>>>>>> e1ffa3d03ca5182bf7933903e2902e6893c8fc66
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Heart,
-  HelpCircle,
-  ListOrdered,
-  LogOut,
-  User,
-} from "lucide-react";
+import { Heart, HelpCircle, ListOrdered, LogOut, User } from "lucide-react";
 import Link from "next/link";
 import { Separator } from "../ui/separator";
 import UserAvatar from "./UserAvatar";
@@ -79,41 +68,25 @@ const AccountPopover = () => {
     {
       link: "/my-account",
       label: "Akun Saya",
-<<<<<<< HEAD
       icon: <User className="h-4 w-4" />,
-=======
-      icon: <User size={18} />,
->>>>>>> e1ffa3d03ca5182bf7933903e2902e6893c8fc66
       isActive: pathname.includes("/my-account"),
     },
     {
       link: "/wishlist",
       label: "Daftar Keinginan",
-<<<<<<< HEAD
       icon: <Heart className="h-4 w-4" />,
-=======
-      icon: <Heart size={18} />,
->>>>>>> e1ffa3d03ca5182bf7933903e2902e6893c8fc66
       isActive: pathname.includes("/wishlist"),
     },
     {
       link: "/my-orders",
       label: "Pesanan Saya",
-<<<<<<< HEAD
       icon: <ListOrdered className="h-4 w-4" />,
-=======
-      icon: <ListOrdered size={18} />,
->>>>>>> e1ffa3d03ca5182bf7933903e2902e6893c8fc66
       isActive: pathname.includes("/my-orders"),
     },
     {
       link: "/help",
       label: "Bantuan",
-<<<<<<< HEAD
       icon: <HelpCircle className="h-4 w-4" />,
-=======
-      icon: <HelpCircle size={18} />,
->>>>>>> e1ffa3d03ca5182bf7933903e2902e6893c8fc66
       isActive: pathname.includes("/help"),
     },
   ];
@@ -133,7 +106,6 @@ const AccountPopover = () => {
             <User size={25} />
           )}
         </PopoverTrigger>
-<<<<<<< HEAD
         <PopoverContent className="rounded-2xl w-56">
           <div className="space-y-1">
             {loading ? (
@@ -184,35 +156,6 @@ const AccountPopover = () => {
               </>
             )}
           </div>
-=======
-        <PopoverContent className="rounded-2xl p-4 w-60">
-          <ul className="space-y-1">
-            <div className="text-center">
-              <UserAvatar />
-            </div>
-            <Separator className="!my-2" />
-            {userLinks.map((link) => (
-              <Link
-                key={link.link}
-                href={link.link}
-                className={cn(
-                  "flex items-center gap-2 hover:bg-gray-200 dark:hover:bg-gray-800 p-2 rounded-md text-sm",
-                  link.isActive && "bg-gray-200 dark:bg-gray-800"
-                )}
-              >
-                {link.icon} {link.label}
-              </Link>
-            ))}
-            <Separator className="!my-2" />
-            <button
-              type="button"
-              className="flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 text-sm w-full"
-            >
-              <LogOut size={18} />
-              Keluar
-            </button>
-          </ul>
->>>>>>> e1ffa3d03ca5182bf7933903e2902e6893c8fc66
         </PopoverContent>
       </Popover>
     </div>
