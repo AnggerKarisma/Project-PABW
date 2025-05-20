@@ -11,6 +11,7 @@ import ProductColorSelection from "./ProductColorSelection";
 import { Product } from "@/types";
 import Link from "next/link";
 import { calculateDiscount } from "@/lib/calculateDiscount";
+import { formatRupiah } from "@/lib/formatRupiah";
 
 const ProductDetails = ({ product }: { product: Product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -40,10 +41,16 @@ const ProductDetails = ({ product }: { product: Product }) => {
       {/* product stock */}
       <div>
         {product.stockItems === 0 ? (
-          <p className="text-lg  w-fit rounded-md text-muted-foreground">out of stock</p>
+          <p className="text-lg  w-fit rounded-md text-muted-foreground">
+            out of stock
+          </p>
         ) : (
           <p className="text-lg w-fit rounded-md text-muted-foreground">
-            Only <span className="text-lg text-black dark:text-white">({product.stockItems})</span> items in stock
+            Only{" "}
+            <span className="text-lg text-black dark:text-white">
+              ({product.stockItems})
+            </span>{" "}
+            items in stock
           </p>
         )}
       </div>
@@ -58,12 +65,15 @@ const ProductDetails = ({ product }: { product: Product }) => {
         <div className="">
           {/* Original Price */}
           <p className="text-muted-foreground line-through text-2xl">
-            ${product?.price}
+            {formatRupiah(product?.price, true)}
           </p>
           <div className="flex items-center gap-4">
             {/* Discounted Price */}
             <p className="text-3xl font-bold text-green-500 border-green-500 border py-2 px-6 rounded-lg">
-              ${calculateDiscount(product.price, product.discount)}
+              {formatRupiah(
+                calculateDiscount(product.price, product.discount),
+                true
+              )}
             </p>
             <ProductQuantityChange
               quantity={quantity}

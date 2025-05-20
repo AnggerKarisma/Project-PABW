@@ -11,6 +11,7 @@ import { colors } from "@/data/products/productColor";
 import { dummyCategories } from "@/data/category/categoryData";
 import { createClient } from "@/utils/supabase/client";
 import { Tables } from "@/database.types";
+import { formatRupiah } from "@/lib/formatRupiah";
 type Brand = Tables<"brands">;
 
 const FilterProducts = () => {
@@ -166,7 +167,9 @@ const FilterProducts = () => {
             max={5000}
             value={maxValue}
           />
-          <p className="text-center text-green-500 text-2xl">${maxValue}</p>
+          <p className="text-center text-green-500 text-2xl">
+            {formatRupiah(maxValue, true)}
+          </p>
         </div>
       </div>
 

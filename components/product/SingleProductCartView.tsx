@@ -6,22 +6,15 @@ import { Product } from "@/types";
 import { calculateDiscount } from "@/lib/calculateDiscount";
 import { useRouter } from "next/navigation";
 import ProductOptions from "./ProductOptions";
+import { formatRupiah } from "@/lib/formatRupiah";
 
 const SingleProductCartView = ({ product }: { product: Product }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   const router = useRouter();
 
-  const {
-    category,
-    discount,
-    id,
-    name,
-    price,
-    rating,
-    reviews,
-    stockItems,
-  } = product;
+  const { category, discount, id, name, price, rating, reviews, stockItems } =
+    product;
 
   const discountedPrice = calculateDiscount(price, discount);
 
@@ -54,9 +47,11 @@ const SingleProductCartView = ({ product }: { product: Product }) => {
         </h3>
         <RatingReview rating={rating} review={reviews.length} />
         <div className="text-lg font-bold space-x-3">
-          <span className="line-through text-muted-foreground">${price}</span>
+          <span className="line-through text-muted-foreground">
+            {formatRupiah(price, true)}
+          </span>
           <span className="text-xl font-bold text-green-500">
-            ${discountedPrice.toFixed(2)}
+            {formatRupiah(discountedPrice, true)}
           </span>
         </div>
         <div className="mt-2">
