@@ -13,7 +13,7 @@ import Link from "next/link";
 import { calculateDiscount } from "@/lib/calculateDiscount";
 import { formatRupiah } from "@/lib/formatRupiah";
 
-const ProductDetails = ({ product }: { product: Product }) => {
+const ProductDetails = ({ product }: { product: any }) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState("");
 

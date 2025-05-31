@@ -190,49 +190,46 @@ export type Database = {
       }
       products: {
         Row: {
-          about_item: string[] | null
+          aboutItem: string[] | null
           brand: string | null
           category: string | null
-          color: string[] | null
-          created_at: string
+          color: string[]
           description: string | null
-          discount: number | null
+          discount: number
           id: number
-          images: string[] | null
-          name: string | null
-          price: number | null
-          rating: number | null
-          stock_items: number | null
+          images: string[]
+          name: string
+          price: number
+          rating: number
+          stockItems: number
         }
         Insert: {
-          about_item?: string[] | null
+          aboutItem?: string[] | null
           brand?: string | null
           category?: string | null
-          color?: string[] | null
-          created_at?: string
+          color: string[]
           description?: string | null
-          discount?: number | null
+          discount?: number
           id?: number
-          images?: string[] | null
-          name?: string | null
-          price?: number | null
-          rating?: number | null
-          stock_items?: number | null
+          images: string[]
+          name: string
+          price?: number
+          rating: number
+          stockItems: number
         }
         Update: {
-          about_item?: string[] | null
+          aboutItem?: string[] | null
           brand?: string | null
           category?: string | null
-          color?: string[] | null
-          created_at?: string
+          color?: string[]
           description?: string | null
-          discount?: number | null
+          discount?: number
           id?: number
-          images?: string[] | null
-          name?: string | null
-          price?: number | null
-          rating?: number | null
-          stock_items?: number | null
+          images?: string[]
+          name?: string
+          price?: number
+          rating?: number
+          stockItems?: number
         }
         Relationships: []
       }
@@ -242,6 +239,7 @@ export type Database = {
           full_name: string | null
           id: string
           updated_at: string | null
+          user_role: Database["public"]["Enums"]["user_role_enum"] | null
           username: string | null
           website: string | null
         }
@@ -250,6 +248,7 @@ export type Database = {
           full_name?: string | null
           id: string
           updated_at?: string | null
+          user_role?: Database["public"]["Enums"]["user_role_enum"] | null
           username?: string | null
           website?: string | null
         }
@@ -258,6 +257,7 @@ export type Database = {
           full_name?: string | null
           id?: string
           updated_at?: string | null
+          user_role?: Database["public"]["Enums"]["user_role_enum"] | null
           username?: string | null
           website?: string | null
         }
@@ -267,8 +267,7 @@ export type Database = {
         Row: {
           author: string | null
           content: string | null
-          created_at: string
-          date: string | null
+          date: string
           id: number
           image: string | null
           product_id: number | null
@@ -277,8 +276,7 @@ export type Database = {
         Insert: {
           author?: string | null
           content?: string | null
-          created_at?: string
-          date?: string | null
+          date: string
           id?: number
           image?: string | null
           product_id?: number | null
@@ -287,8 +285,7 @@ export type Database = {
         Update: {
           author?: string | null
           content?: string | null
-          created_at?: string
-          date?: string | null
+          date?: string
           id?: number
           image?: string | null
           product_id?: number | null
@@ -339,7 +336,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      user_role_enum: "Admin" | "courier" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -454,6 +451,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      user_role_enum: ["Admin", "courier", "user"],
+    },
   },
 } as const

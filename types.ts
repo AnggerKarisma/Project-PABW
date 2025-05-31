@@ -1,27 +1,19 @@
 // change or modify the types as your requirement
 
-export type Product = {
-  id: number;
-  name: string;
-  category: string;
-  description: string;
-  aboutItem: string[];
-  price: number;
-  discount: number;
-  rating: number;
-  reviews: Review[];
-  brand?: string;
-  color?: string[];
-  stockItems: number;
-  images: string[];
-};
+import { Tables } from "./database.types";
 
-export type Review = {
-  author: string;
-  image: string;
-  content: string;
-  rating:number
-  date: Date;
+export type Product = Tables<'products'> &{reviews: Tables<'reviews'>[]};
+
+export type Review = Tables<'reviews'>;
+  
+export type ProductDisplay = Omit<Tables<'products'>, 'created_at'> & {
+  reviews: {
+    content: string;
+    rating: number;
+    author: string;
+    image: string;
+    date: Date;
+  }[];
 };
 
 export type SearchParams = {

@@ -1,30 +1,64 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 import ProductViewChange from "../product/ProductViewChange";
-import { productsData } from "@/data/products/productsData";
+// import { productsData } from "@/data/products/productsData";
+import { createClient } from "@/utils/supabase/client";
 import Pagination from "../others/Pagination";
 import SingleProductListView from "@/components/product/SingleProductListView";
-import { Product, SearchParams } from "@/types";
+import { SearchParams } from "@/types";
 import SingleProductCartView from "../product/SingleProductCartView";
 import { Loader2 } from "lucide-react";
 import Loader from "../others/Loader";
+import { Tables } from "@/database.types";
+
+type Product = Tables<"products"> & {
+  reviews: Tables<"reviews">[];
+};
 
 interface ShopPageContainerProps {
   searchParams: SearchParams;
   gridColumn?: number;
 }
 
+const supabase = createClient();
+
 const ShopPageContainer = ({
   searchParams,
   gridColumn,
 }: ShopPageContainerProps) => {
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [listView, setListView] = useState(false);
+  const [productsData, setProductData] = useState<Product[]>([]);
   const [filteredData, setFilteredData] = useState<Product[]>([]);
   const [paginatedData, setPaginatedData] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(
     Number(searchParams.page) || 1
   );
+
+  useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const supabase = createClient();
+        const { data, error } = await supabase
+          .from("products")
+          .select(`*,reviews (*)`)
+          .order("created_at", { ascending: false });
+
+        if (error) throw error;
+        setProductData(data || []);
+      } catch (err) {
+        setError(
+          err instanceof Error ? err.message : "Failed to fetch banners"
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBanners();
+  }, []);
+
   const itemsPerPage = 6;
 
   // Function to filter data based on search params
@@ -47,8 +81,9 @@ const ShopPageContainer = ({
 
     // Filter by color
     if (searchParams.color) {
-      filteredProducts = filteredProducts.filter((product) =>
-        product?.color.includes(searchParams.color)
+      filteredProducts = filteredProducts.filter(
+        (product) =>
+          product != null && product!.color.includes(searchParams.color)
       );
     }
 
@@ -113,6 +148,10 @@ const ShopPageContainer = ({
         <p>Sorry no result found with your filter selection</p>
       </div>
     );
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
   }
 
   return (

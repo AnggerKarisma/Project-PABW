@@ -32,10 +32,7 @@ const ProductTab = ({ aboutItem = [], reviews = [] }: ProductTabsProps) => {
           ) : (
             <div className="grid grid-cols-1 gap-2">
               {reviews.map((review, index) => (
-                <div
-                  key={index}
-                  className="p-2 rounded-md shadow-md space-y-2"
-                >
+                <div key={index} className="p-2 rounded-md shadow-md space-y-2">
                   <div>
                     <p className="text-sm text-muted-foreground">
                       {review.content}
@@ -59,7 +56,7 @@ const ProductTab = ({ aboutItem = [], reviews = [] }: ProductTabsProps) => {
                     />
                     <div>
                       <p className="whitespace-nowrap">{review.author}</p>
-                      <small>{review.date.toDateString()}</small>
+                      <small>{review.date}</small>
                     </div>
                   </div>
                 </div>

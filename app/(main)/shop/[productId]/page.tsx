@@ -1,4 +1,3 @@
-
 import ProductGallery from "@/components/product/ProductGallery";
 import { productsData } from "@/data/products/productsData";
 import React from "react";
@@ -36,7 +35,7 @@ const ProductIdPage = ({ params }: ProductIdPageProps) => {
         {/* Product Gallery */}
         <ProductGallery isInModal={false} images={product?.images!} />
         {/* product details */}
-        <ProductDetails product={product!}/>
+        <ProductDetails product={product!} />
       </div>
       {/* Related Products */}
       <RelatedProducts products={relatedProducts} />

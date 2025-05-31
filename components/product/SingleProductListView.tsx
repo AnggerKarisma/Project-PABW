@@ -5,9 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import AddToWishlistBtn from "../buttons/AddToWishlistBtn";
 import AddToCartBtn from "../buttons/AddToCartBtn";
-import { Product } from "@/types";
 import { calculateDiscount } from "@/lib/calculateDiscount";
 import { formatRupiah } from "@/lib/formatRupiah";
+import { Tables } from "@/database.types";
+
+type Product = Tables<"products"> & {
+  reviews: Tables<"reviews">[];
+};
 
 const SingleProductListView = ({ product }: { product: Product }) => {
   const { category, discount, id, images, name, price, rating, reviews } =
