@@ -25,12 +25,6 @@ const DropdownMenuComponent = () => {
             <Link href={"/shoppagetwo"}>Shop Page Two</Link>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <Link href={"/blogpageone"}>Blog Page One</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href={"/blogpagetwo"}>Blog Page Two</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
             <Link href={"/dashboard"}>Dashboard Page</Link>
           </DropdownMenuItem>
           <DropdownMenuItem>

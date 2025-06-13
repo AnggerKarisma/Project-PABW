@@ -207,28 +207,6 @@ const ProductForm = () => {
 
         <div>
           <Label
-            htmlFor="type"
-            className="block text-sm font-medium text-gray-700 dark:text-white"
-          >
-            Tipe Produk
-          </Label>
-          <select
-            id="type"
-            className="mt-1 p-2 block w-full dark:bg-slate-950 rounded-md border-gray-300 dark:border-gray-600 focus:ring-blue-500 focus:border-blue-500"
-            {...register("type")}
-          >
-            <option value="featured">Unggulan</option>
-            <option value="top-rated">Paling Favorit</option>
-            <option value="most-popular">Terpopuler</option>
-            <option value="new-arrivals">Produk Baru</option>
-          </select>
-          {errors.type && (
-            <span className="text-red-500">{errors.type.message}</span>
-          )}
-        </div>
-
-        <div>
-          <Label
             htmlFor="description"
             className="block text-sm font-medium text-gray-700 dark:text-white"
           >
@@ -329,7 +307,9 @@ const ProductForm = () => {
           )}
 
           {selectedFiles.length === 0 && (
-            <span className="text-red-500">Minimal satu gambar wajib diunggah</span>
+            <span className="text-red-500">
+              Minimal satu gambar wajib diunggah
+            </span>
           )}
         </div>
 

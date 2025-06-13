@@ -57,30 +57,9 @@ const SignInForm = () => {
     }
   };
 
-  const handleGoogleSignIn = async () => {
-    setIsLoading(true);
-    setAuthError(null);
-
-    try {
-      const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: "google",
-        options: {
-          redirectTo: `${window.location.origin}/auth/callback`,
-        },
-      });
-
-      if (error) {
-        throw error;
-      }
-    } catch (error: any) {
-      setAuthError(error.message || "Gagal masuk dengan Google.");
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-md space-y-4">
+      <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-md w-full max-w-md">
         <div className="text-center">
           <h1 className="text-2xl font-bold">Masuk</h1>
           <p className="text-sm text-gray-500">
@@ -100,7 +79,7 @@ const SignInForm = () => {
             <Input
               id="email"
               type="email"
-              placeholder="contoh@email.com"
+              placeholder="example@gmail.com"
               {...register("email")}
             />
             {errors.email && (
@@ -112,7 +91,7 @@ const SignInForm = () => {
             <div className="flex justify-between items-center">
               <Label htmlFor="password">Kata Sandi</Label>
               <Link
-                href="/lupa-password"
+                href="/forgot-password"
                 className="text-sm text-blue-600 hover:underline"
               >
                 Lupa kata sandi?
@@ -134,27 +113,9 @@ const SignInForm = () => {
           </Button>
         </form>
 
-        <div className="relative flex items-center justify-center">
-          <div className="border-t border-gray-300 w-full"></div>
-          <span className="bg-white px-2 text-sm text-gray-500 absolute">
-            atau
-          </span>
-        </div>
-
-        <Button
-          type="button"
-          variant="outline"
-          className="w-full flex items-center justify-center gap-2"
-          onClick={handleGoogleSignIn}
-          disabled={isLoading}
-        >
-          <FaGoogle />
-          <span>Masuk dengan Google</span>
-        </Button>
-
         <p className="text-center text-sm">
           Belum punya akun?{" "}
-          <Link href="/daftar" className="text-blue-600 hover:underline">
+          <Link href="/sign-up" className="text-blue-600 hover:underline">
             Daftar disini
           </Link>
         </p>

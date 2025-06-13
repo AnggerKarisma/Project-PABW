@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Link from "next/link";
 import React from "react";
 import {
@@ -14,7 +14,6 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const SidebarDashboard = () => {
-
   const pathname = usePathname();
 
   const tautanDashboard = [
@@ -47,12 +46,6 @@ const SidebarDashboard = () => {
       label: "Banner",
       icon: <Images size={20} />,
       isActive: pathname.includes("dashboard/banners"),
-    },
-    {
-      link: "/dashboard/blogs",
-      label: "Blog",
-      icon: <Book size={20} />,
-      isActive: pathname.includes("dashboard/blogs"),
     },
     {
       link: "/dashboard/customers",

@@ -1,50 +1,70 @@
 "use client";
-import { cn } from "@/lib/utils";
+
 import Image from "next/image";
 import React, { useState } from "react";
 
 interface ProductGalleryProps {
   images: string[];
-  isInModal: boolean;
+  productName: string;
+  isInModal?: boolean;
 }
 
-const ProductGallery = ({ images, isInModal }: ProductGalleryProps) => {
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+const ProductGallery: React.FC<ProductGalleryProps> = ({
+  images,
+  productName,
+  isInModal = false,
+}) => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleImageSelection = (image: string) => {
-    setSelectedImage(image);
-  };
+  const isValidIndex = activeIndex >= 0 && activeIndex < images.length;
+  const mainImage = isValidIndex ? images[activeIndex] : images[0];
+
+  if (!images || images.length === 0) {
+    return (
+      <div className="w-full h-96 bg-gray-100 rounded-lg flex items-center justify-center">
+        <p className="text-gray-500">Tidak ada gambar</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="">
-      <div
-        className={cn(
-          "relative w-full rounded-xl overflow-hidden bg-gray-200",
-          isInModal
-            ? "w-full lg:min-w-[30rem] h-[15rem] lg:h-[25rem]"
-            : "w-full lg:min-w-[30rem] h-[20rem] lg:h-[30rem]"
-        )}
-      >
+    <div className="w-full flex flex-col gap-4">
+      <div className="relative w-full h-96 rounded-lg overflow-hidden">
         <Image
-          className="object-contain "
-          src={selectedImage}
-          alt="product"
-          fill
+          key={mainImage} // mencegah render konflik saat gambar berubah
+          src={mainImage}
+          alt={`${productName} image ${activeIndex + 1}`}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-lg"
+          priority
         />
       </div>
-      <div className="flex items-center gap-2 p-2 overflow-auto hide-scrollbar mt-2">
-        {images.map((image) => (
-          <Image
-            onClick={() => handleImageSelection(image)}
-            className={cn("rounded-md object-cover border", image === selectedImage && 'ring-2')}
-            src={image}
-            alt="product"
-            key={image}
-            width={100}
-            height={100}
-          />
-        ))}
-      </div>
+
+      {images.length > 1 && (
+        <div className="flex gap-2 overflow-x-auto">
+          {images.map((img, index) => (
+            <button
+              key={index}
+              type="button"
+              onClick={() => {
+                if (index !== activeIndex) setActiveIndex(index);
+              }}
+              className={`w-20 h-20 relative rounded-md border-2 ${
+                index === activeIndex ? "border-blue-600" : "border-transparent"
+              } focus:outline-none`}
+            >
+              <Image
+                src={img}
+                alt={`Thumbnail ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-md"
+              />
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

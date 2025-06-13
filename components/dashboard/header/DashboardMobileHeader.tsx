@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import {
   Sheet,
@@ -31,7 +31,7 @@ const DashboardMobileHeader = () => {
       link: "/dashboard",
       label: "Beranda",
       icon: <Home size={20} />,
-      isActive: pathname === '/dashboard',
+      isActive: pathname === "/dashboard",
     },
     {
       link: "/dashboard/orders",
@@ -56,12 +56,6 @@ const DashboardMobileHeader = () => {
       label: "Banner",
       icon: <Images size={20} />,
       isActive: pathname.includes("dashboard/banners"),
-    },
-    {
-      link: "/dashboard/blogs",
-      label: "Blog",
-      icon: <Book size={20} />,
-      isActive: pathname.includes("dashboard/blogs"),
     },
     {
       link: "/dashboard/customers",

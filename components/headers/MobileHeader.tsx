@@ -69,12 +69,6 @@ const MobileHeader = () => {
       icon: <Store />,
       isActive: pathname.includes("/shop"),
     },
-    {
-      link: "/blog",
-      label: "Blog",
-      icon: <Text />,
-      isActive: pathname.includes("/blog"),
-    },
   ];
 
   return (
